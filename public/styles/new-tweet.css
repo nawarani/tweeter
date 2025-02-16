@@ -2,7 +2,7 @@
   width: 100%;
   background: white;
   padding: 20px;
-
+  margin: 10px 0;
 }
 
 .new-tweet form {
@@ -10,23 +10,25 @@
   flex-direction: column;
 }
 
+.new-tweet div{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  font-family: "Bungee", sans-serif;
+  font-size: 0.8em;
+}
+
+button {
+  background: #4056A1;
+  color: white;
+  padding: 10px;
+  border: 0;
+}
+
 #tweet-text {
   border: 0;
   border-bottom: 5px solid #555249;
   margin: 5px 0;
   resize: none;
-}
-
-.new-tweet div{
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  font-family: "Bungee", sans-serif;
-}
-
-.new-tweet button {
-  background: #4056A1;
-  color: white;
-  padding: 10px;
-  font-size: 80%;
 }
