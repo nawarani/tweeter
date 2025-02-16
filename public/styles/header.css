@@ -5,7 +5,6 @@ header {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  color: black;
   background-color: #e3b842;
   background-image: url("https://www.transparenttextures.com/patterns/dark-mosaic.png");
 }
