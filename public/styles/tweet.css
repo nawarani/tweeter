@@ -1,0 +1,46 @@
+.tweets article {
+  margin: 10px 5px;
+  padding: 0.5em;
+  border: 0.2em solid #555249;
+  display: flex;
+  flex-direction: column;
+}
+
+.tweets header, footer{
+  display: flex;
+  justify-content: space-between;
+}
+
+.tweets header > span {
+  color: #C5CCE3;
+}
+
+.tweets article > div{
+  margin: 10px 0;
+  padding: 1em;
+  border-bottom: 0.2em solid #555249;
+}
+
+.tweets header *{
+  padding: 0 0.2em;
+}
+
+.tweets footer{
+  padding: 0.7em 1em;
+  font-size: 0.7em;
+}
+
+.tweets footer i{
+  margin: 0.2em;
+  color: #4055A1;
+}
+
+.tweets article:hover{
+  box-shadow: 0.5em 0.5em 0 0 #C5CCE3;
+}
+
+.tweets article footer i:hover{
+  color: #CA9824;
+}
+
+
