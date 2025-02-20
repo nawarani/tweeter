@@ -38,6 +38,16 @@ $(document).ready(function() {
       </article>`);
     return $tweet;
   };
+
+  const createError = function(shortBool) {
+    if(shortBool){
+      $('.error-span').text("Tweet cannot be empty").addClass('visible-error').slideDown();
+
+    } else {
+      $('.error-span').text("Tweet cannot be over 140 characters").addClass('visible-error').slideDown();
+    }
+  };
+
   
   const renderTweets = function(tweets) {
     $('.tweets').empty();
@@ -56,9 +66,9 @@ $(document).ready(function() {
     console.log(data);
 
     if(textContent === ''|| textContent === null){
-      alert("Tweet cannot be empty");
+      createError(true);
     } else if(textContent.length > 140) {
-      alert("Tweet cannot be over 140 characters");
+      createError(false);
     } else {
       $.ajax({
         type:"POST",
@@ -90,5 +100,11 @@ $(document).ready(function() {
   };
 
   loadTweets();
+
+
+  //clear error on form click
+  $('.new-tweet form textarea').on("click", function(event) {
+    $('.error-span').removeClass('visible-error').slideUp();
+  });
 
 });
