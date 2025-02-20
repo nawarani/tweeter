@@ -7,6 +7,14 @@
 $(document).ready(function() {
   console.log("document ready in client.js");
 
+
+  // protecc input
+  const escape = function (str) {
+    let div = document.createElement("div");
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  };
+  
   
   const createTweetElement = function(tweet) {
     const $tweet = $(`
@@ -14,11 +22,11 @@ $(document).ready(function() {
         <header>
           <div>
             <img src = ${tweet.user.avatars} alt="user avatar">
-            <span>${tweet.user.name}</span>
+            <span>${escape(tweet.user.name)}</span>
           </div>
-          <span>${tweet.user.handle}</span>
+          <span>${escape(tweet.user.handle)}</span>
         </header>
-        <section>${tweet.content.text}</section>
+        <section>${escape(tweet.content.text)}</section>
         <footer>
           <span>${timeago.format(tweet.created_at)}</span>
           <div class = "tweet-icons">
@@ -32,6 +40,7 @@ $(document).ready(function() {
   };
   
   const renderTweets = function(tweets) {
+    $('.tweets').empty();
     for(const tweet of tweets){
       const $tweet = createTweetElement(tweet);
       $('.tweets').prepend($tweet);
