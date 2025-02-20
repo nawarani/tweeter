@@ -24,7 +24,26 @@ body {
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
- .red-counter {
-  color: red;
- }
+.red-counter {
+color: red;
+}
 
+section {
+  text-wrap: wrap;
+}
+
+@media only screen and (min-width: 1024px) {
+  body {
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between;
+  }
+
+  #header, main{
+    padding: 2vw;
+  }
+
+  #header{
+    margin: 5vw;
+  }
+}
