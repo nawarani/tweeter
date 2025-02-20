@@ -34,7 +34,7 @@ $(document).ready(function() {
   const renderTweets = function(tweets) {
     for(const tweet of tweets){
       const $tweet = createTweetElement(tweet);
-      $('.tweets').append($tweet);
+      $('.tweets').prepend($tweet);
     }
   };
 
@@ -57,6 +57,7 @@ $(document).ready(function() {
         data: data,
         success: function(res) {
           console.log('Tweet submitted');
+          loadTweets();
         },
         error: function(xhr, status, error) {
           console.log('Error: ', error);
