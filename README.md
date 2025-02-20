@@ -16,3 +16,33 @@ This repository is the starter code for the project: Students will fork and clon
 
 - Express
 - Node 5.10.x or above
+- body-parser ^1.15.2
+- timeago.js ^4.0.2
+
+## Features
+Landing page:
+![Landing page](/public/images/1.PNG)
+
+### Create new tweet
+![new tweet interface](/public/images/2.PNG)
+
+### Tweets updated real time(no refresh required)
+![new tweet being typed in](/public/images/2.PNG)
+![new tweet created](/public/images/3.PNG)
+
+### Character limits
+![character limits below 1](/public/images/7.PNG)
+![character limits over 140](/public/images/8.PNG)
+
+### Responsive design
+Desktop:
+![resposive design desktop](/public/images/1.PNG)
+Tablet/phone:
+![resposive design tablet/phone](/public/images/4.PNG)
+
+### Hover designs
+![hover effects](/public/images/6.PNG)
+
+### Security features
+Protection against XSS
+![protection against XSS](/public/images/9.PNG)
