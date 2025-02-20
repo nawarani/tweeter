@@ -8,13 +8,14 @@ $(document).ready(function() {
   console.log("document ready in client.js");
 
 
+
+  // helper functions
   // protecc input
   const escape = function (str) {
     let div = document.createElement("div");
     div.appendChild(document.createTextNode(str));
     return div.innerHTML;
   };
-  
   
   const createTweetElement = function(tweet) {
     const $tweet = $(`
@@ -57,6 +58,7 @@ $(document).ready(function() {
     }
   };
 
+  
   
   // form submission with jquery
   $('.new-tweet form').on("submit", function(event) {
@@ -103,7 +105,7 @@ $(document).ready(function() {
   loadTweets();
 
 
-  //clear error on form click
+  // clear error on form click
   $('.new-tweet form textarea').on("click", function(event) {
     $('.error-span').removeClass('visible-error').slideUp();
   });
