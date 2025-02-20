@@ -42,20 +42,27 @@ $(document).ready(function() {
   // form submission with jquery
   $('.new-tweet form').on("submit", function(event) {
     event.preventDefault();
+    const textContent = $(this).find('textarea').val();
     const data = $(this).serialize();
     console.log(data);
-    
-    $.ajax({
-      type:"POST",
-      url: '/tweets',
-      data: data,
-      success: function(res) {
-        console.log('Tweet submitted');
-      },
-      error: function(xhr, status, error) {
-        console.log('Error: ', error);
-      }
-    });
+
+    if(textContent === ''|| textContent === null){
+      alert("Tweet cannot be empty");
+    } else if(textContent.length > 140) {
+      alert("Tweet cannot be over 140 characters");
+    } else {
+      $.ajax({
+        type:"POST",
+        url: '/tweets',
+        data: data,
+        success: function(res) {
+          console.log('Tweet submitted');
+        },
+        error: function(xhr, status, error) {
+          console.log('Error: ', error);
+        }
+      });
+    }
   });
   
   
